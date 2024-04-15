@@ -16,6 +16,10 @@ module.exports = {
     static: {
       directory: path.resolve(__dirname, 'dist'),
     },
+    watchFiles: [
+      path.resolve(__dirname, 'src/index.html'),
+      path.resolve(__dirname, 'dist/index.html'),
+    ],
     port: 3000,
     open: true,
     hot: true,
