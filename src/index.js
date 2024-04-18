@@ -1,27 +1,26 @@
-import './styles/style.css'
-import homeBackground from './assets/home-background.jpg'
+import './styles/style.css';
+import { displayHome } from './display-home';
+import { displayMenu } from './display-menu';
+import { displayAbout } from './display-about';
 
-//Home Background
-const homeBody = document.querySelector('body');
-homeBody.style.backgroundImage = `url(${homeBackground})`;
-homeBody.style.backgroundSize = 'cover';
-
-//Home Contents
 const content = document.querySelector('#content');
+const homeBtn = document.querySelector('.home-btn');
+const menuBtn = document.querySelector('.menu-btn');
+const aboutBtn = document.querySelector('.about-btn');
 
-const mainHeading = document.createElement('div');
-mainHeading.textContent = 'Welcome to Burger Queen!';
+homeBtn.addEventListener('click', () => {
+  content.textContent = '';
+  displayHome();
+})
 
-const mainDescription = document.createElement('div');
-mainDescription.textContent = 'Most juicy burger in town that will make you shake';
+menuBtn.addEventListener('click', () => {
+  content.textContent = '';
+  displayMenu();
+})
 
-const openHours = document.createElement('div');
-openHours.textContent = 'Open Hours: 8am to 6pm';
+aboutBtn.addEventListener('click', () => {
+  content.textContent = '';
+  displayAbout();
+})
 
-content.append(mainHeading, mainDescription, openHours);
-
-mainHeading.style.fontFamily = "Lobster", sans-serif;
-mainDescription.style.fontFamily = "Roboto", sans-serif;
-openHours.style.fontFamily = "Roboto", sans-serif;
-
-console.log(123);
+displayHome();
